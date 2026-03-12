@@ -39,9 +39,9 @@ implemented by another team member.
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Hardware pins
-#define RED_LED 8
-#define BUTTON 2
-#define BUZZER 9
+#define RED_LED 4
+#define BUTTON 6
+#define BUZZER 5
 
 // Timing values in seconds
 int waitTime = 5;
@@ -49,8 +49,8 @@ int crossTime = 5;
 
 void setup() {
 
-  // Using INPUT_PULLUP prevents floating button signals
-  pinMode(BUTTON, INPUT_PULLUP);
+  // Grove Beginner Kit onboard button reads HIGH when pressed
+  pinMode(BUTTON, INPUT);
 
   pinMode(RED_LED, OUTPUT);
   pinMode(BUZZER, OUTPUT);
@@ -70,8 +70,8 @@ void setup() {
 
 void loop() {
 
-  // Button reads LOW when pressed
-  if(digitalRead(BUTTON) == LOW) {
+  // Grove Beginner Kit button reads HIGH when pressed
+  if(digitalRead(BUTTON) == HIGH) {
 
     startCountdown();
 
@@ -161,7 +161,7 @@ void crossingPhase(){
 
   /*
   ---------------------------------------------------
-  OPTIONAL EXTENSION (COMMENTED OUT)
+  OPTIONAL EXTENSION 
   ---------------------------------------------------
 
   This extension will:
@@ -172,7 +172,6 @@ void crossingPhase(){
   Another team member will implement this section.
   To enable it, remove the comment markers.
   */
-
   /*
   for(int i = crossTime; i > 0; i--){
 
