@@ -172,7 +172,7 @@ void crossingPhase(){
   Another team member will implement this section.
   To enable it, remove the comment markers.
   */
-  /*
+  
   for(int i = crossTime; i > 0; i--){
 
     display.clearDisplay();
@@ -201,6 +201,6 @@ void crossingPhase(){
     digitalWrite(RED_LED, LOW);
     delay(200);
   }
-  */
+  
 
 }
